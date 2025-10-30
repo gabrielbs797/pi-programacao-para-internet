@@ -1,0 +1,161 @@
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+/* CLASSES */
+
+.introducao {
+	background-color: #dddddd;
+}
+
+.menu {
+	height: 100px;
+	justify-content: space-between;
+    max-width: 960px;
+}
+
+.menu-logo a {
+	text-decoration: none;
+}
+
+.menu-nav a:hover {
+    color: #ff8d8d !important;
+}
+
+.menu-nav ul {
+	gap: 20px;
+}
+
+.newsletter {
+	background-color: #dddddd;
+	gap: 20px;
+	padding: 60px calc((100% - 960px) / 2);
+}
+
+.newsletter-info {
+	flex: 1 1 260px;
+}
+
+.newsletter-info p {
+	max-width: 230px;
+}
+
+.newsletter-form input {
+	flex: 3 1 200px;
+}
+
+.newsletter-form button {
+	flex: 1 1 200px;
+}
+
+.produtos {
+    max-width: 960px;
+}
+
+.produtos-conteiner {
+	gap: 20px;
+}
+
+.produtos-item {
+    flex: 1 1 175px;
+}
+
+.produtos-item h2 {
+	margin-bottom: 0;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.produtos-item img {
+	border: 1px solid #dddddd;
+	border-top: 0;
+}
+
+.sobre {
+	gap: 40px;
+    max-width: 960px;
+}
+
+.sobre-img {
+	flex: 1;
+}
+
+.sobre-info {
+	flex: 2 1 300px;
+}
+
+.superinfo {
+	gap: 10px;
+    max-width: 960px;
+}
+
+.superinfo a:hover {
+	color: #ff8d8d !important;
+}
+
+.valores {
+	max-width: 960px;
+}
+
+.valores-conteiner {
+	gap: 20px;
+}
+
+.valores-item {
+	flex: 1;
+}
+
+.valores-item h2::before {
+	content: '';
+	display: inline-block;
+	width: 8px;
+	height: 30px;
+	margin-right: 10px;
+	background: red;
+}
+
+@media (max-width: 799px) {
+	.sobre-info {
+		flex: 2 1 200px;
+	}
+}
+
+@media (max-width: 699px) {
+	.sobre-info {
+		flex: 2 1 100px;
+	}
+}
+
+@media (max-width: 699px) {
+	.sobre {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 627px) {
+	.superinfo {
+		text-align: center;
+	}
+}
+
+@media (max-width: 612px) {
+	.produtos-item h2 {
+		text-align: center;
+	}
+
+	.valores-item {
+		flex: 1 1 300px;
+	}
+}
+
+@media (max-width: 408px) {
+	.menu {
+		flex-direction: column;
+		justify-content: center;
+	}
+}

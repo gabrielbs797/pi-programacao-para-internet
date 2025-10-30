@@ -1,0 +1,19 @@
+{
+    "name": "gabrielsilva/pi-programacao-para-internet",
+    "description": "Esse é o que vou enviar!",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabriel Bueno da Silva",
+            "email": "gabriel.silva797@fatec.sp.gov.br"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

@@ -11,4 +11,8 @@ if ($url == "/") {
     require __DIR__ . '/../app/Views/home.php';
 }
 
+if($url == "/login") {
+    require __DIR__ . '/../app/Views/login.php';
+}
+
 ?>

@@ -11,6 +11,10 @@ if ($url == "/") {
     require __DIR__ . '/../app/Views/home.php';
 }
 
+if($url == "/dashboard") {
+    require __DIR__ . '/../app/Views/dashboard.php';
+}
+
 if($url == "/login") {
     require __DIR__ . '/../app/Views/login.php';
 }

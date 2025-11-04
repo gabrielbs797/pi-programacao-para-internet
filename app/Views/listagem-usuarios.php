@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcceleRods - Dashboard</title>
+    <title>AcceleRods - Listagem de usuários</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -37,15 +37,74 @@
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control" type="search" placeholder="Pesquisar..."/>
-                <button class="btn btn-info mx-2" type="submit">🔍</button>
             </form>
             <a href="/login" class="btn btn-dark" type="button">Sair</a>
             </div>
         </div>
         </nav>
 
-    <main>
-        <img src="/imgs/dashboard.jpg" class="rounded mx-auto my-5 d-block" style="width: 65%;">
+    <main class="mx-5 px-5 py-4">
+        
+        <div class="d-flex justify-content-between">
+            <h1>Usuários</h1>
+            <a href="/cadastro-usuario" class="btn btn-success my-auto">Adicionar usuário</a>
+        </div>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Tipo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Marcos Pereira</td>
+                    <td>marcos.pereira@email.com</td>
+                    <td>Administrador(a)</td>
+                    <td>
+                        <a href="#" class="btn btn-primary btn-sm">
+                            <i class="bi bi-pencil-fill"></i> Editar
+                        </a>
+                        <a href="#" class="btn btn-danger btn-sm">
+                            <i class="bi bi-trash3-fill"></i> Excluir
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Juliana Araújo</td>
+                    <td>juliana.araujo@email.com</td>
+                    <td>Funcionário(a)</td>
+                    <td>
+                        <a href="#" class="btn btn-primary btn-sm">
+                            <i class="bi bi-pencil-fill"></i> Editar
+                        </a>
+                        <a href="#" class="btn btn-danger btn-sm">
+                            <i class="bi bi-trash3-fill"></i> Excluir
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Gabriel Moraro</td>
+                    <td>gabriel.moraro@email.com</td>
+                    <td>Cliente</td>
+                    <td>
+                        <a href="#" class="btn btn-primary btn-sm">
+                            <i class="bi bi-pencil-fill"></i> Editar
+                        </a>
+                        <a href="#" class="btn btn-danger btn-sm">
+                            <i class="bi bi-trash3-fill"></i> Excluir
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 
     <footer class="menu-bg bg-danger bg-gradient flex-wrap py-3 text-center text-white">

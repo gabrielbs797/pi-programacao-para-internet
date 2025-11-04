@@ -11,8 +11,24 @@ if ($url == "/") {
     require __DIR__ . '/../app/Views/home.php';
 }
 
+if($url == "/cadastro-produtos") {
+    require __DIR__ . '/../app/Views/cadastro-produtos.php';
+}
+
+if($url == "/cadastro-usuarios") {
+    require __DIR__ . '/../app/Views/cadastro-usuarios.php';
+}
+
 if($url == "/dashboard") {
     require __DIR__ . '/../app/Views/dashboard.php';
+}
+
+if($url == "/listagem-produtos") {
+    require __DIR__ . '/../app/Views/listagem-produtos.php';
+}
+
+if($url == "/listagem-usuarios") {
+    require __DIR__ . '/../app/Views/listagem-usuarios.php';
 }
 
 if($url == "/login") {

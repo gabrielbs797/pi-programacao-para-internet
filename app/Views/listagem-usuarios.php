@@ -38,7 +38,7 @@
             <form class="d-flex" role="search">
                 <input class="form-control" type="search" placeholder="Pesquisar..."/>
             </form>
-            <a href="/login" class="btn btn-dark" type="button">Sair</a>
+            <a href="/login" class="btn btn-dark ms-2" type="button">Sair</a>
             </div>
         </div>
         </nav>

@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-danger bg-gradient">
         <div class="container-fluid">
-            <a class="navbar-brand text-white fw-bold" href="/dashboard">AcceleRods</a>
+            <a class="navbar-brand text-white fw-bold" href="/painel.html">AcceleRods</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -21,8 +21,8 @@
                         Usuários
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/listagem-usuarios">Listagem de usuários</a></li>
-                        <li><a class="dropdown-item" href="/cadastro-usuarios">Cadastro de usuários</a></li>
+                        <li><a class="dropdown-item" href="/listagem-usuarios.html">Listagem de usuários</a></li>
+                        <li><a class="dropdown-item" href="/cadastro-usuarios.html">Cadastro de usuários</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -30,24 +30,24 @@
                         Produtos
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/listagem-produtos">Listagem de produtos</a></li>
-                        <li><a class="dropdown-item" href="/cadastro-produtos">Cadastro de produtos</a></li>
+                        <li><a class="dropdown-item" href="/listagem-produtos.html">Listagem de produtos</a></li>
+                        <li><a class="dropdown-item" href="/cadastro-produtos.html">Cadastro de produtos</a></li>
                     </ul>
                 </li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control" type="search" placeholder="Pesquisar..."/>
+				<a href="/login.html" class="btn btn-dark ms-2" type="button">Sair</a>
             </form>
-            <a href="/login" class="btn btn-dark ms-2" type="button">Sair</a>
             </div>
         </div>
         </nav>
 
-    <main>
-        <img src="/imgs/dashboard.jpg" class="rounded mx-auto my-5 d-block" style="width: 65%;">
+    <main class="painel-conteiner my-4">
+        <img src="/imgs/dashboard.jpg" class="rounded mx-auto" style="width: 90%;">
     </main>
 
-    <footer class="menu-bg bg-danger bg-gradient flex-wrap py-3 text-center text-white">
+    <footer class="menu-bg bg-danger bg-gradient flex-wrap p-3 text-center text-white">
         <p class="my-auto">Projeto desenvolvido por: Gabriel Bueno da Silva e Giovani Henrique Cornelio</p>
     </footer>
 

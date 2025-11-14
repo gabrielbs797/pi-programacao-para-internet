@@ -15,36 +15,19 @@
             </tr>
         </thead>
         <tbody>
+            <?php foreach($usuarios as $u): ?>
             <tr>
-                <td>1</td>
-                <td>Marcos Pereira</td>
-                <td>marcos.pereira@email.com</td>
-                <td>Administrador(a)</td>
+                <td><?= $u['id_usuario'] ?></td>
+                <td> <strong><?= $u['nome'] ?> </strong> </td>
+                <td><?= $u['email'] ?></td>
+                <td><?= $u['tipo_usuario'] ?></td>
+                
                 <td>
                     <a href="#" class="btn btn-primary btn-sm">Editar</a>
                     <a href="#" class="btn btn-danger btn-sm">Excluir</a>
                 </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Juliana Araújo</td>
-                <td>juliana.araujo@email.com</td>
-                <td>Funcionário(a)</td>
-                <td>
-                    <a href="#" class="btn btn-primary btn-sm">Editar</a>
-                    <a href="#" class="btn btn-danger btn-sm">Excluir</a>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Gabriel Moraro</td>
-                <td>gabriel.moraro@email.com</td>
-                <td>Cliente</td>
-                <td>
-                    <a href="#" class="btn btn-primary btn-sm">Editar</a>
-                    <a href="#" class="btn btn-danger btn-sm">Excluir</a>
-                </td>
-            </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>

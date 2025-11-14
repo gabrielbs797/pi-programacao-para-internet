@@ -3,6 +3,8 @@
 // Importa o carregamento automático do Composer para carregar as rotas
 require __DIR__ . '/../vendor/autoload.php';
 
+use App\Controllers\UsuarioController;
+
 // Função para renderizar as telas com leiaute
 function render($view, $data = []) {
     // Extrai os dados recebidos e converte em variáveis
@@ -37,7 +39,8 @@ if ($url == "/" || $url == "/index.php") {
 }
 // Usuários
 elseif ($url == "/usuarios") {
-    render('usuarios/lista_usuarios.php', ['title' => 'Usuários - Lojas de Miniaturas AcceleRods']);
+    $controller = new UsuarioController();
+    $controller->listar();
 } elseif ($url == "/usuarios/inserir") {
     render('usuarios/form_usuarios.php', ['title' => 'Cadastro de usuários - Lojas de Miniaturas AcceleRods']);
 }

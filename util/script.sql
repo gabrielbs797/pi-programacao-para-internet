@@ -25,3 +25,54 @@ CREATE TABLE usuarios (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- data de alteração
     deleted_at TIMESTAMP NULL DEFAULT NULL -- marcação de exclusão lógica
 );
+
+
+CREATE TABLE categorias (
+	id_categoria BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	descricao VARCHAR(255) NOT null,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- data de criação
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- data de alteração
+    deleted_at TIMESTAMP NULL DEFAULT NULL -- marcação de exclusão lógica
+);
+
+INSERT INTO categorias (descricao) VALUES
+('Carro'),
+('Motocicleta'),
+('Caminhão'),
+('Picape'),
+('Ônibus');
+
+CREATE TABLE produtos (
+    id_produto BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    marca VARCHAR(255) NOT NULL,
+    modelo VARCHAR(255) NOT NULL,
+    ano INT NOT NULL,
+    descricao TEXT,
+    quantidade INT NOT NULL DEFAULT 1,
+    valor_unitario DECIMAL(10,2) NOT NULL,
+    id_categoria BIGINT UNSIGNED NOT null,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- data de criação
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- data de alteração
+    deleted_at TIMESTAMP NULL DEFAULT null, -- marcação de exclusão lógica
+    
+    CONSTRAINT fk_produtos_categorias
+        FOREIGN KEY (id_categoria)
+        REFERENCES categorias(id_categoria)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+INSERT INTO produtos (
+    marca,
+    modelo,
+    ano,
+    descricao,
+    quantidade,
+    valor_unitario,
+    id_categoria
+) VALUES
+( 'Hot Wheels', 'Deora II', 2010, 'Modelo clássico série Surf Rods.', 5, 18.99, 1),
+( 'Hot Wheels', 'Bone Shaker', 2018, 'Edição especial com crânio frontal.', 3, 22.50, 1),
+('Maisto', 'Lamborghini Aventador', 2015, 'Miniatura 1:64 com ótimo acabamento.', 2, 29.90, 1),
+('Jada Toys', 'Nissan Skyline R34', 2020, 'Versão Fast & Furious, detalhes premium.', 1, 39.99, 1),
+('Matchbox', 'Ford F-150 Raptor', 2019, 'Pick-up off-road de alta qualidade.', 4, 17.50, 1);

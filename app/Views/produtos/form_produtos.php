@@ -42,11 +42,9 @@
         <div class="mb-3 col-sm">
         <label for="categoria" class="form-label">Categoria</label>
         <select class="form-select" id="categoria" required>
-            <option value="carro">Carro</option>
-            <option value="motocicleta">Motocicleta</option>
-            <option value="caminhao">Caminhão</option>
-            <option value="picape">Picape</option>
-            <option value="onibus">Ônibus</option>
+            <?php foreach($categorias as $c): ?>
+            <option value=<?= '"' . $c['id_categoria'] . '"' ?>><?= $c['descricao'] ?></option>
+            <?php endforeach; ?>
         </select>
     </div>
     </div>

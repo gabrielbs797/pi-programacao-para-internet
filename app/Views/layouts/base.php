@@ -34,6 +34,15 @@
                         <li><a class="dropdown-item" href="/produtos/inserir">Cadastro de produtos</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                        Categorias
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/categorias">Listagem de categorias</a></li>
+                        <li><a class="dropdown-item" href="/categorias/inserir">Cadastro de categorias</a></li>
+                    </ul>
+                </li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control" type="search" placeholder="Pesquisar..."/>

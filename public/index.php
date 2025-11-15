@@ -4,6 +4,8 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use App\Controllers\UsuarioController;
+use App\Controllers\ProdutoController;
+use App\Controllers\CategoriaController;
 
 // Função para renderizar as telas com leiaute
 function render($view, $data = []) {
@@ -46,10 +48,24 @@ elseif ($url == "/usuarios") {
 }
 // Produtos
 elseif ($url == "/produtos") {
-    render('produtos/lista_produtos.php', ['title' => 'Produtos - Lojas de Miniaturas AcceleRods']);
+    $produtos = new ProdutoController();
+    $produtos->listar();
 } elseif ($url == "/produtos/inserir") {
-    render('produtos/form_produtos.php', ['title' => 'Cadastro de produtos - Lojas de Miniaturas AcceleRods']);
+    $categorias_controller = new CategoriaController();
+    $categorias = $categorias_controller->retornar_categorias();
+    render('produtos/form_produtos.php', [
+        'title' => 'Cadastro de produtos - Lojas de Miniaturas AcceleRods',
+        'categorias' => $categorias 
+   ]);
 }
+// Categorias
+elseif ($url == "/categorias") {
+    $categorias_controller = new CategoriaController();
+    $categorias_controller->listar();
+} elseif ($url == "/categorias/inserir"){
+    render('categorias/form_categorias.php', ['title' => 'Cadastro de Categorias']);
+}
+
 
 
 ?>

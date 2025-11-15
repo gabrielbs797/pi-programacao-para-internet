@@ -1,6 +1,6 @@
 <div class="d-flex mb-3 justify-content-between">
-    <h1>Produtos</h1>
-    <a href="/produtos/inserir" class="btn btn-success my-auto">Adicionar produto</a>
+    <h1>Categorias</h1>
+    <a href="/categorias/inserir" class="btn btn-success my-auto">Adicionar categoria</a>
 </div>
 
 <div class="tabela-responsiva">
@@ -8,19 +8,15 @@
     <thead>
         <tr>
             <th>Código</th>
-            <th>Nome</th>
-            <th>Marca</th>
-            <th>Valor unitário</th>
+            <th>Descrição</th>
             <th>Ações</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach($produtos as $p): ?>
+        <?php foreach($categorias as $c): ?>
         <tr>
-            <td><?= $p['id_produto'] ?></td>
-            <td><?= $p['modelo'] ?></td>
-            <td><?= $p['valor_unitario'] ?></td>
-            <td><?= $p['id_produto'] ?></td>
+            <td><?= $c['id_categoria'] ?></td>
+            <td><?= $c['descricao'] ?></td>
             <td>
                 <a href="#" class="btn btn-primary btn-sm">Editar</a>
                 <a href="#" class="btn btn-danger btn-sm">Excluir</a>
@@ -29,4 +25,3 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-</div>

@@ -1,5 +1,5 @@
 <?php
-
+session_start(); // Inicia a sessão
 // Importa o carregamento automático do Composer para carregar as rotas
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -39,18 +39,27 @@ if ($url == "/" || $url == "/index.php") {
 } elseif ($url == "/sobre") {
     render('sobre.php', ['title' => 'Sobre a página - Lojas de Miniaturas AcceleRods']);
 }
+
 // Usuários
 elseif ($url == "/usuarios") {
     $controller = new UsuarioController();
     $controller->listar();
-} elseif ($url == "/usuarios/inserir") {
+} 
+elseif ($url == "/usuarios/inserir") {
     render('usuarios/form_usuarios.php', ['title' => 'Cadastro de usuários - Lojas de Miniaturas AcceleRods']);
 }
+// Verifica alem da rota o tipo de pedido
+else if ($url == "/usuarios/salvar" && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    $controller = new UsuarioController();
+    $controller->salvar();    
+} 
+
 // Produtos
 elseif ($url == "/produtos") {
     $produtos = new ProdutoController();
     $produtos->listar();
-} elseif ($url == "/produtos/inserir") {
+} 
+elseif ($url == "/produtos/inserir") {
     $categorias_controller = new CategoriaController();
     $categorias = $categorias_controller->retornar_categorias();
     render('produtos/form_produtos.php', [
@@ -58,11 +67,13 @@ elseif ($url == "/produtos") {
         'categorias' => $categorias 
    ]);
 }
+
 // Categorias
 elseif ($url == "/categorias") {
     $categorias_controller = new CategoriaController();
     $categorias_controller->listar();
-} elseif ($url == "/categorias/inserir"){
+}
+elseif ($url == "/categorias/inserir"){
     render('categorias/form_categorias.php', ['title' => 'Cadastro de Categorias']);
 }
 

@@ -1,6 +1,6 @@
 <h1>Cadastrar usuário</h1>
 
-<form action="/usuarios" method="POST">
+<form action="/usuarios/salvar" method="POST">
     <div class="row">
         <div class="mb-3 col-sm">
             <label for="nome" class="form-label">Nome completo</label>
@@ -26,7 +26,7 @@
 
         <div class="mb-3 col-sm">
             <label for="nascimento" class="form-label">Data de nascimento</label>
-            <input type="date" class="form-control" id="nascimento" name="nascimento" required>
+            <input type="date" class="form-control" id="nascimento" name="data_nascimento" required>
         </div>
     </div>
 
@@ -110,8 +110,8 @@
     </div>
 
     <div class="mb-3">
-        <label for="tipo" class="form-label">Tipo de usuário</label>
-        <select class="form-select" id="tipo" required>
+        <label for="tipo_usuario" class="form-label">Tipo de usuário</label>
+        <select class="form-select" id="tipo_usuario" name="tipo_usuario" required>
             <option value="administrador">Administrador(a)</option>
             <option value="funcionario">Funcionário(a)</option>
             <option value="cliente">Cliente</option>

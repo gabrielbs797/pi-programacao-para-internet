@@ -1,6 +1,6 @@
 <h1>Cadastrar categoria</h1>
 
-<form action="/produtos" method="POST">
+<form action="/categorias/salvar" method="POST">
     <div class="row">
         <div class="mb-3 col-sm">
             <label for="categoria" class="form-label">Categoria</label>

@@ -31,8 +31,8 @@ class usuario {
 
             $senha_criptografada = password_hash($dados['senha'], PASSWORD_BCRYPT);
 
-            $sql = "INSERT INTO usuarios (nome,  data_nascimento,  genero,  celular,  rua,  numero,  cidade,  estado,  email,  tipo_usuario,  senha)";
-            $sql .= "VALUES             (:nome, :data_nascimento, :genero, :celular, :rua, :numero, :cidade, :estado, :email, :tipo_usuario, :senha)";
+            $sql = "INSERT INTO usuarios ( nome,  cpf,  data_nascimento,  genero,  celular,  rua,  complemento,  numero,  cidade,  estado,  email,  tipo_usuario,  senha)";
+            $sql .= "VALUES              (:nome, :cpf, :data_nascimento, :genero, :celular, :rua, :complemento, :numero, :cidade, :estado, :email, :tipo_usuario, :senha)";
 
             // Prepara o SQL para ser inserido no BD e limpa códigos maliciosos
             $stmt = $pdo->prepare($sql);
@@ -41,11 +41,13 @@ class usuario {
             $stmt->bindParam(':nome'            ,$dados['nome']             ,PDO::PARAM_STR);
             $stmt->bindParam(':data_nascimento' ,$dados['data_nascimento']                 );
             $stmt->bindParam(':genero'          ,$dados['genero']           ,PDO::PARAM_STR);
-            $stmt->bindParam(':celular'         ,$dados['celular']          ,PDO::PARAM_STR);
-            $stmt->bindParam(':rua'             ,$dados['rua']              ,PDO::PARAM_STR);
+            $stmt->bindParam(':cpf'             ,$dados['cpf']              ,PDO::PARAM_STR);
+            $stmt->bindParam(':celular'         ,$dados['celular']         ,PDO::PARAM_STR);
+            $stmt->bindParam(':rua'             ,$dados['rua']       ,PDO::PARAM_STR);
+            $stmt->bindParam(':complemento'     ,$dados['complemento']      ,PDO::PARAM_STR);
             $stmt->bindParam(':numero'          ,$dados['numero']           ,PDO::PARAM_STR);
             $stmt->bindParam(':cidade'          ,$dados['cidade']           ,PDO::PARAM_STR);
-            $stmt->bindParam(':estado'          ,$dados['nomestadoe']       ,PDO::PARAM_STR);
+            $stmt->bindParam(':estado'          ,$dados['estado']       ,PDO::PARAM_STR);
             $stmt->bindParam(':email'           ,$dados['email']            ,PDO::PARAM_STR);
             $stmt->bindParam(':tipo_usuario'    ,$dados['tipo_usuario']     ,PDO::PARAM_STR);
             $stmt->bindParam(':senha'           ,$senha_criptografada);

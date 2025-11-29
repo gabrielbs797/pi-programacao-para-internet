@@ -1,12 +1,7 @@
 <h1>Cadastrar produto</h1>
 
-<form action="/produtos" method="POST">
+<form action="/produtos/salvar" method="POST">
     <div class="row">
-        <div class="mb-3 col-sm-2">
-            <label for="codigo" class="form-label">Código</label>
-            <input type="text" class="form-control" id="codigo" name="codigo" placeholder="XYZ123" required>
-        </div>
-
         <div class="mb-3 col-sm">
             <label for="marca" class="form-label">Marca</label>
             <input type="text" class="form-control" id="marca" name="marca" placeholder="Hot Wheels, Maisto..." required>
@@ -41,7 +36,7 @@
         
         <div class="mb-3 col-sm">
         <label for="categoria" class="form-label">Categoria</label>
-        <select class="form-select" id="categoria" required>
+        <select class="form-select" id="categoria" name="categoria" required>
             <?php foreach($categorias as $c): ?>
             <option value=<?= '"' . $c['id_categoria'] . '"' ?>><?= $c['descricao'] ?></option>
             <?php endforeach; ?>

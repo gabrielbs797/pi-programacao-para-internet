@@ -20,8 +20,8 @@
         </div>
 
         <div class="mb-3 col-sm">
-            <label for="telefone" class="form-label">Telefone</label>
-            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(14) 9 9123-4567" required>
+            <label for="celular" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" id="celular" name="celular" placeholder="(14) 9 9123-4567" required>
         </div>
 
         <div class="mb-3 col-sm">
@@ -42,8 +42,8 @@
         </div>
 
         <div class="mb-3 col-sm-9">
-            <label for="logradouro" class="form-label">Logradouro</label>
-            <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Avenida Brasil" required>
+            <label for="rua" class="form-label">Logradouro</label>
+            <input type="text" class="form-control" id="rua" name="rua" placeholder="Avenida Brasil" required>
         </div>
         
         <div class="mb-3 col-sm-1">

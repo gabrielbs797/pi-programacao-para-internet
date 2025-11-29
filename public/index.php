@@ -67,6 +67,10 @@ elseif ($url == "/produtos/inserir") {
         'categorias' => $categorias 
    ]);
 }
+else if ($url == "/produtos/salvar" && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    $produtos_controller = new ProdutoController();
+    $produtos_controller->salvar();
+}
 
 // Categorias
 elseif ($url == "/categorias") {
@@ -75,6 +79,10 @@ elseif ($url == "/categorias") {
 }
 elseif ($url == "/categorias/inserir"){
     render('categorias/form_categorias.php', ['title' => 'Cadastro de Categorias']);
+}
+else if ($url == "/categorias/salvar" && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    $categorias_controller = new CategoriaController();
+    $categorias_controller->salvar();
 }
 
 

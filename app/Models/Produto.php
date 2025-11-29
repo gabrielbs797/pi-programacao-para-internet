@@ -17,20 +17,28 @@ class produto {
 
     public static function salvar($dados) {
         try {
-            // $pdo = Database::conectar();
+            $pdo = Database::conectar();
 
-            // $senha_criptografada = password_hash($dados['senha'], PASSWORD_BCRYPT);
+            $sql = "INSERT INTO produtos ( marca,  modelo,  ano,  descricao,  quantidade,  valor_unitario,  id_categoria)";
+            $sql .= "VALUES              (:marca, :modelo, :ano, :descricao, :quantidade, :valor_unitario, :id_categoria)";
 
-            // $sql = "INSERT INTO produtos (nome, data_nascimento, genero, celular, rua, numero, cidade, estado, email, tipo_usuario, senha)";
-            // $sql .= "VALUES (:nome, :data_nascimento, :genero, :celular, :rua, :numero, :cidade, :estado, :email, :tipo_usuario, :senha)";
+            //Prepara o SQL para ser inserido no BD e limpa códigos maliciosos
+            $stmt = $pdo->prepare($sql);
 
-            // Prepara o SQL para ser inserido no BD e limpa códigos maliciosos
-            // $stmt = $pdo->prepare($sql);
+            //Passa as variáveis para o SQL
+            $stmt ->bindParam(':marca'           ,$dados['marca']           ,PDO::PARAM_STR);
+            $stmt ->bindParam(':modelo'          ,$dados['modelo']          ,PDO::PARAM_STR);
+            $stmt ->bindParam(':ano'             ,$dados['ano']             ,PDO::PARAM_STR);
+            $stmt ->bindParam(':descricao'       ,$dados['descricao']       ,PDO::PARAM_STR);
+            $stmt ->bindParam(':quantidade'      ,$dados['quantidade']      ,PDO::PARAM_INT);
+            $stmt ->bindParam(':valor_unitario'  ,$dados['valor_unitario']  ,PDO::PARAM_STR);
+            $stmt ->bindParam(':id_categoria'    ,$dados['id_categoria']    ,PDO::PARAM_INT);
 
-            // Passa as variáveis para o SQL
-            // $stmt ->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
+            $stmt->execute();
 
-        }catch (PDOException $e) {
+            return (int) $pdo->lastInsertId();
+        }
+        catch (PDOException $e) {
             echo "Erro ao inserir: " . $e->getMessage();
         }
     }

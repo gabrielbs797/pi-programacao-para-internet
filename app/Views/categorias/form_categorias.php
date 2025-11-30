@@ -10,7 +10,7 @@ if (isset($dados['id_categoria'])) {
 
 <h1>Cadastrar categoria</h1>
 
-<form action=<?= $rota ?> method="POST">
+<form action="<?= $rota ?>" method="POST">
     <div class="row">
         <div class="mb-3 col-sm">
             <label for="categoria" class="form-label">Categoria</label>

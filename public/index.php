@@ -71,6 +71,20 @@ else if ($url == "/produtos/salvar" && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $produtos_controller = new ProdutoController();
     $produtos_controller->salvar();
 }
+else if (preg_match('#^/produtos/(\d+)/editar$#', $url, $num)) {
+    $produtos_controller = new ProdutoController();
+    $categorias_controller = new CategoriaController();
+    $categorias = $categorias_controller->retornar_categorias();
+    $produtos_controller->editar($num[1], $categorias);
+}
+else if (preg_match('#^/produtos/(\d+)/atualizar$#', $url, $num) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    $produtos_controller = new ProdutoController();
+    $produtos_controller->atualizar($num[1]);
+} 
+else if (preg_match('#^/produtos/(\d+)/excluir$#', $url, $num)) {
+   $produtos_controller = new ProdutoController();
+   $produtos_controller->excluir($num[1]);
+}
 
 // Categorias
 elseif ($url == "/categorias") {

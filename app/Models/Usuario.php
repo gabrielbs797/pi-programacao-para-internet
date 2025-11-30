@@ -59,7 +59,7 @@ class usuario {
 
         }catch (PDOException $e) {
             echo "Erro ao inserir: " . $e->getMessage();
-            //exit;
+            exit;
         }
     }
 }

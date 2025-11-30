@@ -10,7 +10,16 @@ class produto {
     public static function buscarTodos() {
         $pdo = DataBase::Conectar();
 
-        $sql = "SELECT * FROM produtos";
+        $sql = "select p.id_produto
+                      ,p.marca 
+	                  ,p.modelo
+	                  ,p.ano
+	                  ,p.descricao
+	                  ,p.quantidade
+	                  ,p.valor_unitario
+                      ,c.descricao as categoria
+                    from produtos  p
+                    inner join categorias c on p.id_categoria = c.id_categoria ";
 
         return $pdo->query($sql)->fetchAll();
     }

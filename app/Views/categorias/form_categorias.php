@@ -14,7 +14,7 @@ if (isset($dados['id_categoria'])) {
     <div class="row">
         <div class="mb-3 col-sm">
             <label for="categoria" class="form-label">Categoria</label>
-            <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Escreva aqui a categoria" 
+            <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Nome da categoria" 
             value="<?= isset($dados['descricao']) ? htmlspecialchars($dados['descricao']) : '' ?>" required>
         </div>
     </div>

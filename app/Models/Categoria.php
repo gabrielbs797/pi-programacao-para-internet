@@ -53,7 +53,7 @@ class categoria {
         try {
             $pdo = Database::conectar();
 
-            $sql =  'UPDATE CATEGORIAS SET descricao = :descricao WHERE id_categoria = :id_categoria';
+            $sql =  'UPDATE categorias SET descricao = :descricao WHERE id_categoria = :id_categoria';
 
             $stmt = $pdo->prepare($sql);
 

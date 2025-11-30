@@ -27,7 +27,7 @@ class ProdutoController {
         $erros = [];
 
         if(empty($dados['marca'])) {
-            $erros[] = 'O Campo MARCA não pode ficar em branco!';
+            $erros[] = 'O campo "marca" não pode ficar em branco!';
         }
 
         // Se não houver erros salva
@@ -43,5 +43,31 @@ class ProdutoController {
         }
     }
 
-    
+    public function retornar_produtos() {
+        return Produto::buscarTodos();
+    }
+
+    public function editar($id) {
+        $dados = Produto::buscarUm($id);
+
+        render("produtos/form_produtos.php", [
+            'title' => 'Alterar Produto - Accelerods',
+            "dados" => $dados   
+        ]);
+    }
+
+    public function atualizar($id) {
+        $dados = [
+            'id_produto' => $id,
+            'descricao'    => filter_input(INPUT_POST, 'produto', FILTER_SANITIZE_SPECIAL_CHARS)
+        ];
+
+        Produto::atualizar($dados);
+        header('Location: /produtos');
+    }
+
+    public function excluir($id) {
+        Produto::excluir($id);
+        header('Location: /produtos');
+    }
 }

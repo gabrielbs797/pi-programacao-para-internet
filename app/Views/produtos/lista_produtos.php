@@ -19,11 +19,11 @@
         <tr>
             <td><?= $p['id_produto'] ?></td>
             <td><?= $p['modelo'] ?></td>
-            <td><?= $p['valor_unitario'] ?></td>
-            <td><?= $p['id_produto'] ?></td>
+            <td><?= $p['marca'] ?></td>
+            <td>R$ <?= $p['valor_unitario'] ?></td>
             <td>
-                <a href="#" class="btn btn-primary btn-sm">Editar</a>
-                <a href="#" class="btn btn-danger btn-sm">Excluir</a>
+                <a href="<?= "produtos/" . $p['id_produto'] . "/editar"  ?>" class="btn btn-primary btn-sm">Editar</a>
+                <a href="<?= "produtos/" . $p['id_produto'] . "/excluir"  ?>" class="btn btn-danger btn-sm">Excluir</a>
             </td>
         </tr>
         <?php endforeach; ?>

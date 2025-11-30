@@ -39,4 +39,28 @@ class CategoriaController {
     public function retornar_categorias() {
         return Categoria::buscarTodos();
     }
+
+    public function editar($id) {
+        $dados = Categoria::buscarUm($id);
+
+        render("categorias/form_categorias.php", [
+            'title' => 'Alterar Categoria - Accelerods',
+            "dados" => $dados   
+        ]);
+    }
+
+    public function atualizar($id) {
+        $dados = [
+            'id_categoria' => $id,
+            'descricao'    => filter_input(INPUT_POST, 'categoria', FILTER_SANITIZE_SPECIAL_CHARS)
+        ];
+
+        Categoria::atualizar($dados);
+        header('Location: /categorias');
+    }
+
+    public function excluir($id) {
+        Categoria::excluir($id);
+        header('Location: /categorias');
+    }
 }

@@ -18,8 +18,8 @@
             <td><?= $c['id_categoria'] ?></td>
             <td><?= $c['descricao'] ?></td>
             <td>
-                <a href="#" class="btn btn-primary btn-sm">Editar</a>
-                <a href="#" class="btn btn-danger btn-sm">Excluir</a>
+                <a href=<?= "categorias/" . $c['id_categoria'] . "/editar"  ?> class="btn btn-primary btn-sm">Editar</a>
+                <a href=<?= "categorias/" . $c['id_categoria'] . "/excluir" ?> class="btn btn-danger btn-sm">Excluir</a>
             </td>
         </tr>
         <?php endforeach; ?>

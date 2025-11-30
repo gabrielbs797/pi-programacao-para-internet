@@ -36,4 +36,49 @@ class categoria {
             echo "Erro ao inserir: " . $e->getMessage();
         }
     }
+
+    public static function buscarUm($id){
+        // Inicia a conexão com o BD
+        $pdo = Database::conectar();
+
+        $sql = "SELECT * FROM categorias WHERE deleted_at IS NULL AND id_categoria = :id";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
+    public static function atualizar($dados) {
+        try {
+            $pdo = Database::conectar();
+
+            $sql =  'UPDATE CATEGORIAS SET descricao = :descricao WHERE id_categoria = :id_categoria';
+
+            $stmt = $pdo->prepare($sql);
+
+            $stmt->bindParam(':descricao'    ,$dados['descricao']    ,PDO::PARAM_STR);
+            $stmt->bindParam(':id_categoria' ,$dados['id_categoria'] ,PDO::PARAM_INT);
+
+            return $stmt->execute();
+        }
+        catch (PDOException $e) {
+            echo "Erro ao alterar: " . $e->getMessage();
+            exit;
+        }
+    }
+
+    public static function excluir($id) {
+        try {
+            $pdo = Database::conectar();
+            $sql = "DELETE FROM categorias WHERE id_categoria = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            return $stmt->execute();
+        }
+        catch (PDOException $e) {
+            echo "Erro ao excluir: " . $e->getMessage();
+            exit;    
+        }
+    }
 }

@@ -15,11 +15,11 @@ function render($view, $data = []) {
     // Inclui a tela que enviamos específica
     require __DIR__ . '/../app/Views/' . $view;
     $content = ob_get_clean();
-    // Inclui o leiaute base, que usará a variável $content
+    // Inclui o layout base, que usará a variável $content
     require __DIR__ . '/../app/Views/layouts/base.php';
 }
 
-// Função para renderizar as telas com leiaute
+// Função para renderizar as telas com layout
 function render_sem_template($view, $data = []) {
     // Extrai os dados recebidos e converte em variáveis
     extract($data);
@@ -83,6 +83,18 @@ elseif ($url == "/categorias/inserir"){
 else if ($url == "/categorias/salvar" && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $categorias_controller = new CategoriaController();
     $categorias_controller->salvar();
+}
+else if (preg_match('#^/categorias/(\d+)/editar$#', $url, $num)) {
+    $categorias_controller = new CategoriaController();
+    $categorias_controller->editar($num[1]);
+}
+else if (preg_match('#^/categorias/(\d+)/atualizar$#', $url, $num) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    $categorias_controller = new CategoriaController();
+    $categorias_controller->atualizar($num[1]);
+} 
+else if (preg_match('#^/categorias/(\d+)/excluir$#', $url, $num)) {
+   $categorias_controller = new CategoriaController();
+   $categorias_controller->excluir($num[1]);
 }
 
 

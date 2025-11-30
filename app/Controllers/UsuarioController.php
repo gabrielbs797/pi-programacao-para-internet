@@ -23,9 +23,9 @@ class UsuarioController {
             'data_nascimento' => $_POST['data_nascimento'] ?? '',    
             'genero'          => filter_input(INPUT_POST, 'genero'       ,FILTER_SANITIZE_SPECIAL_CHARS),
             'cpf'             => filter_input(INPUT_POST, 'cpf'          ,FILTER_SANITIZE_NUMBER_INT   ),
-            'celular'         => filter_input(INPUT_POST, 'celular'     ,FILTER_SANITIZE_SPECIAL_CHARS),
-            'rua'             => filter_input(INPUT_POST, 'rua'   ,FILTER_SANITIZE_SPECIAL_CHARS),
-            'complemento'     => filter_input(INPUT_POST, 'complemento'   ,FILTER_SANITIZE_SPECIAL_CHARS),
+            'celular'         => filter_input(INPUT_POST, 'celular'      ,FILTER_SANITIZE_SPECIAL_CHARS),
+            'rua'             => filter_input(INPUT_POST, 'rua'          ,FILTER_SANITIZE_SPECIAL_CHARS),
+            'complemento'     => filter_input(INPUT_POST, 'complemento'  ,FILTER_SANITIZE_SPECIAL_CHARS),
             'numero'          => filter_input(INPUT_POST, 'numero'       ,FILTER_SANITIZE_SPECIAL_CHARS),
             'cidade'          => filter_input(INPUT_POST, 'cidade'       ,FILTER_SANITIZE_SPECIAL_CHARS),
             'estado'          => filter_input(INPUT_POST, 'estado'       ,FILTER_SANITIZE_SPECIAL_CHARS),
@@ -56,4 +56,5 @@ class UsuarioController {
             header('Location: /usuarios/inserir');
         }
     }
+    
 }
